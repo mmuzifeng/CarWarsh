@@ -56,16 +56,11 @@ public class BaseService {
 		else
 			return null;
 	}
-	protected <T> T getAll(Class<T> entityClass,String queryString, Object... objs)
+	protected <T> List<T> getAll(Class<T> entityClass,String queryString, Object... objs)
 	{
 		List<T> list=find(entityClass,queryString,objs);
-		for(int i=0;i<list.size();i++){
-			
-		}
-		if(list.size()>0)
-			return list.get(0);
-		else
-			return null;
+			return list;
+
 	}
 	protected Long getCount(String queryString, Object... objs)
 	{

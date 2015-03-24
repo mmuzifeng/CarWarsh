@@ -1,12 +1,14 @@
 package cn.edu.cqu.carwarsh.services;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
 import cn.edu.cqu.carwarsh.domains.Coupon;
+import cn.edu.cqu.carwarsh.domains.Customer;
 /**
  * 优惠券CRUD操作
  * @author liuji
@@ -19,12 +21,12 @@ public class CouponService extends BaseService{
 	 * @param category 优惠券类型
 	 * @return 找到的Coupon
 	 * @throws Exception
-	 
-	public Coupon findByCategory(String category,Customer customer) throws Exception {
-		return this.getFirst(Coupon.class, "from Coupon where category=? and customer=?",
+	 */
+	public List findByCategory(String category,Customer customer) throws Exception {
+		return  getAll(Coupon.class, "from Coupon where category=? and customer=?",
 				category,customer);
 	}
-	*/
+	
 	/**
 	 * 根据优惠券编号查找Coupon
 	 * @param couponID 优惠券编号
