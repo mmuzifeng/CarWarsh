@@ -7,9 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 /**
  * 优惠券
  * @author liuji
@@ -59,11 +56,6 @@ public class Coupon {
 	 */
 	@Column(nullable=false)
 	private String name;
-	/**
-	 *关联图片路径
-	 */
-	@Column(nullable=false)
-	private String path;
 	
 	public Long getId() {
 		return id;
@@ -112,12 +104,6 @@ public class Coupon {
 	}
 	public void setName(String name) {
 		this.name=name;
-	}
-	public String getPath() {
-		return path;
-	}
-	public void setPath(String path) {
-		this.path=path;
 	}
 	@Override
 	public int hashCode() {
